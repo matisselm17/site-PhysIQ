@@ -50,6 +50,78 @@ body::before {
     z-index: 1;
 }
 
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    z-index: 1000;
+    padding: var(--spacing-sm) 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    text-decoration: none;
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-md);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 100%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #60a5fa;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -58,6 +130,7 @@ body::before {
     justify-content: center;
     text-align: center;
     padding: var(--spacing-lg) 0;
+    padding-top: calc(var(--spacing-lg) + 80px);
     position: relative;
 }
 
@@ -518,6 +591,36 @@ section:last-of-type::after {
 }
 
 /* Responsive Design */
+@media (max-width: 767px) {
+    .nav-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: var(--spacing-md);
+        gap: var(--spacing-sm);
+        border-top: 1px solid rgba(59, 130, 246, 0.2);
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: var(--spacing-sm);
+    }
+
+    .nav-content {
+        position: relative;
+    }
+}
+
 @media (min-width: 768px) {
     .app-logo {
         width: 100px;

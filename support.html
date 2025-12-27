@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - PhysIQ</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">PhysIQ</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html#hero" class="nav-link">Accueil</a></li>
+                    <li><a href="index.html#how-it-works" class="nav-link">Comment ça marche</a></li>
+                    <li><a href="index.html#what-analyzes" class="nav-link">Fonctionnalités</a></li>
+                    <li><a href="index.html#why-this-app" class="nav-link">Pourquoi</a></li>
+                    <li><a href="index.html#app-preview" class="nav-link">Aperçu</a></li>
+                    <li><a href="privacy.html" class="nav-link">Confidentialité</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Support Section -->
+    <section class="support-section">
+        <div class="container">
+            <div class="support-content">
+                <h1 class="support-title">Support</h1>
+                <p class="support-intro">
+                    Vous avez une question ou besoin d'aide ? N'hésitez pas à nous contacter. Nous sommes là pour vous aider !
+                </p>
+
+                <div class="support-form-container">
+                    <form id="supportForm" class="support-form" action="mailto:matisse.lm1@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nom</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Sujet</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="8" required></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3 class="footer-title">PhysIQ</h3>
+            <p class="footer-text">Bientôt disponible</p>
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-link">Politique de confidentialité</a>
+                <a href="support.html" class="footer-link">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion du formulaire avec mailto
+        document.getElementById('supportForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            const body = encodeURIComponent(
+                `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            );
+            const subjectEncoded = encodeURIComponent(subject);
+            
+            window.location.href = `mailto:matisse.lm1@gmail.com?subject=${subjectEncoded}&body=${body}`;
+        });
+    </script>
+</body>
+</html>
+

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - PhysIQ</title>
+    <title>Contact - PhysIQ</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         html {
@@ -30,17 +30,17 @@
         </div>
     </nav>
 
-    <!-- Support Section -->
+    <!-- Contact Section -->
     <section class="support-section">
         <div class="container">
             <div class="support-content">
-                <h1 class="support-title">Support</h1>
+                <h1 class="support-title">Contact</h1>
                 <p class="support-intro">
-                    Vous avez une question ou besoin d'aide ? N'hésitez pas à nous contacter. Nous sommes là pour vous aider !
+                    Une question, une suggestion ou un partenariat ? Contactez-nous, nous serions ravis d'échanger avec vous !
                 </p>
 
                 <div class="support-form-container">
-                    <form id="supportForm" class="support-form" action="mailto:contact@physiqapp.com" method="post" enctype="text/plain">
+                    <form id="contactForm" class="support-form" action="mailto:support@physiq.com" method="post" enctype="text/plain">
                         <div class="form-group">
                             <label for="name" class="form-label">Nom</label>
                             <input type="text" id="name" name="name" class="form-input" required>
@@ -72,17 +72,17 @@
     <footer class="footer">
         <div class="container">
             <h3 class="footer-title">PhysIQ</h3>
-            <p class="footer-text">Bientôt disponible</p>
             <div class="footer-links">
                 <a href="privacy.html" class="footer-link">Politique de confidentialité</a>
-                <a href="support.html" class="footer-link">Support</a>
+                <a href="terms.html" class="footer-link">Conditions d'utilisation</a>
+                <a href="contact.html" class="footer-link">Contact</a>
             </div>
         </div>
     </footer>
 
     <script>
         // Gestion du formulaire avec mailto
-        document.getElementById('supportForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const name = document.getElementById('name').value;
@@ -95,9 +95,8 @@
             );
             const subjectEncoded = encodeURIComponent(subject);
             
-            window.location.href = `mailto:contact@physiqapp.com?subject=${subjectEncoded}&body=${body}`;
+            window.location.href = `mailto:support@physiq.com?subject=${subjectEncoded}&body=${body}`;
         });
     </script>
 </body>
 </html>
-
